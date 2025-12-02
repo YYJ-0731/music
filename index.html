@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云风格音乐播放器</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="music-player">
+        <!-- 顶部信息区 -->
+        <header class="player-header">
+            <h1 class="player-title">在线音乐播放器</h1>
+            <div style="font-size: 18px; margin-bottom: 15px; text-align: center;">25215250229杨英杰</div>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索音乐...">
+                <button>搜索</button>
+            </div>
+        </header>
+
+        <!-- 主要内容区 -->
+        <main class="player-content">
+            <!-- 专辑封面和信息 -->
+            <section class="album-section">
+                <div class="album-cover">
+                    <img id="albumImg" src="https://picsum.photos/400/400?random=1" alt="专辑封面">
+                    <div class="cover-animation"></div>
+                </div>
+                <div class="song-info">
+                    <h2 id="songTitle">歌曲名称</h2>
+                    <p id="artistName">艺术家</p>
+                </div>
+            </section>
+
+            <!-- 进度条 -->
+            <section class="progress-section">
+                <div class="time-display">
+                    <span id="currentTime">00:00</span>
+                    <span id="totalTime">00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                        <div class="progress-handle"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 控制按钮 -->
+            <section class="controls-section">
+                <div class="controls">
+                    <button class="control-btn repeat-btn" title="循环模式">
+                        <span class="icon">🔁</span>
+                    </button>
+                    <button class="control-btn prev-btn" title="上一曲">
+                        <span class="icon">⏮</span>
+                    </button>
+                    <button class="control-btn play-btn" title="播放/暂停">
+                        <span class="icon play-icon">▶️</span>
+                        <span class="icon pause-icon">⏸</span>
+                    </button>
+                    <button class="control-btn next-btn" title="下一曲">
+                        <span class="icon">⏭</span>
+                    </button>
+                    <button class="control-btn volume-btn" title="音量">
+                        <span class="icon">🔊</span>
+                    </button>
+                </div>
+                <div class="volume-control">
+                    <input type="range" min="0" max="1" step="0.01" value="0.8" class="volume-slider">
+                </div>
+            </section>
+        </main>
+
+        <!-- 播放列表 -->
+        <aside class="playlist-section">
+            <div class="playlist-header">
+                <h3>播放列表</h3>
+                <button class="playlist-toggle" title="切换播放列表显示">☰</button>
+            </div>
+            <div class="playlist-container">
+                <ul class="playlist" id="playlist">
+                    <!-- 播放列表项将通过JavaScript动态生成 -->
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 音频元素 - 使用正确的HTML5闭合标签 -->
+        <audio id="audioPlayer" preload="metadata"></audio>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <script src="js/player.js"></script>
+</body>
+</html>
